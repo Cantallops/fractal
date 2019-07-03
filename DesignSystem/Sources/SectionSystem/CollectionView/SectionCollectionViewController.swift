@@ -67,6 +67,10 @@ public class SectionCollectionViewController: UICollectionViewController {
         get { return data.didScroll }
         set { data.didScroll = newValue }
     }
+    public var stoppedScrollingClosure: ((UIScrollView) -> Void)? {
+        get { return data.stoppedScrolling }
+        set { data.stoppedScrolling = newValue }
+    }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
