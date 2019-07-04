@@ -11,7 +11,7 @@ import UIKit
 
 class SectionCollectionViewCell: UICollectionViewCell {
 
-    weak var section: BedrockSection?
+    var section: BedrockSection?
     var sectionView: UIView?
     var sectionViewController: UIViewController?
     var indexPath: IndexPath?
