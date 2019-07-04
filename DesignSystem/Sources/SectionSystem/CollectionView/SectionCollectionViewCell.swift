@@ -23,7 +23,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
         if let section = section, let indexPath = indexPath {
             size = section.size(in: contentView, at: indexPath.item)
         } else {
-            size = .automatic
+            size = .init(width: frame.width, height: frame.height)
         }
 
         // The 1.0 here just needs to be bigger than zero
