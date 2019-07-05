@@ -11,7 +11,7 @@ import UIKit
 
 class SectionCollectionViewCell: UICollectionViewCell {
 
-    var section: BedrockSection?
+    weak var section: BedrockSection?
     var sectionView: UIView?
     var sectionViewController: UIViewController?
     var indexPath: IndexPath?
@@ -23,7 +23,7 @@ class SectionCollectionViewCell: UICollectionViewCell {
         if let section = section, let indexPath = indexPath {
             size = section.size(in: contentView, at: indexPath.item)
         } else {
-            size = .init(width: frame.width, height: frame.height)
+            size = .automatic
         }
 
         // The 1.0 here just needs to be bigger than zero
