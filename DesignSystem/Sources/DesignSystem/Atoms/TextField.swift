@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
-final public class TextField: UITextField {
-    static public let placeholderColor: UIColor = .text(.placeholder)
+final public class TextField: UITextField, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
+
+    static public var placeholderColor: UIColor { return .text(.placeholder) }
     override public var placeholder: String? { didSet { setPlaceholder() }}
 
     public var typography: BrandingManager.Typography = .medium
@@ -33,12 +35,13 @@ final public class TextField: UITextField {
         setup()
     }
 
-    private func setup() {
+    public func configureDesign() {
         font = typography.font
         textColor = .text()
         tintColor = .brand()
         backgroundColor = .clear
         keyboardAppearance = BrandingManager.brand.keyboardAppearance
+        setPlaceholder()
     }
 
     private func setPlaceholder() {

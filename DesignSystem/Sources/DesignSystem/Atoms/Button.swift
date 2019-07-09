@@ -29,7 +29,8 @@ private class ButtonLayer: CAGradientLayer {
     }
 }
 
-final public class Button: UIButton {
+final public class Button: UIButton, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
     
     public struct Style: Equatable, RawRepresentable {
         public let rawValue: String
@@ -98,9 +99,16 @@ final public class Button: UIButton {
         return layer as? CAGradientLayer
     }
 
+    private var style: Button.Style?
+
     public convenience init(style: Button.Style) {
         self.init()
-        guard let buttonBrand = BrandingManager.brand as? ButtonBrand else {
+        self.style = style
+        setup()
+    }
+
+    public func configureDesign() {
+        guard let buttonBrand = BrandingManager.brand as? ButtonBrand, let style = style else {
             Assert("BrandingManager.brand does not conform to protocol ButtonBrand");
             return
         }

@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-public class Slider: UISlider {
+public class Slider: UISlider, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
 
     public enum SnapStyle {
         case none, always, loose([Float])
@@ -26,10 +27,6 @@ public class Slider: UISlider {
         self.snapStyle = snapStyle
         self.snapIncrement = 1.0 / steps
         super.init(frame: .zero)
-        thumbTintColor = nil
-
-        minimumTrackTintColor = .atom(.sliderPositiveTint)
-        maximumTrackTintColor = .atom(.sliderNegativeTint)
 
         addTarget(self, action: #selector(changed), for: .valueChanged)
         addTarget(self, action: #selector(end), for: [.touchUpInside, .touchUpOutside])
@@ -38,6 +35,14 @@ public class Slider: UISlider {
     @available (*, unavailable)
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+
+    public func configureDesign() {
+        thumbTintColor = nil
+
+        minimumTrackTintColor = .atom(.sliderPositiveTint)
+        maximumTrackTintColor = .atom(.sliderNegativeTint)
     }
 
     public func set(steps: Float, snapStyle: SnapStyle = .none, didChangeClosure: @escaping ((Float) -> Void)) {

@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 
-public class ImageView: UIImageView {
-    // Currently does nothing but wrapped to inherit future features
+public class ImageView: UIImageView, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
+
+    public func configureDesign() {
+    }
 }
 
 

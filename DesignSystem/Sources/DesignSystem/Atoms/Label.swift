@@ -8,7 +8,9 @@
 
 import UIKit
 
-public class Label: UILabel {
+public class Label: UILabel, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() }}
+
 
     public var typography: BrandingManager.Typography = .medium { didSet { lineHeight = numberOfLines == 1 ? 0.0 : typography.lineHeight } }
     public var actualLineHeight: CGFloat { return max(lineHeight, font.lineHeight) }
@@ -20,25 +22,27 @@ public class Label: UILabel {
     override public var text: String? { didSet { update() } }
     override public var textAlignment: NSTextAlignment { didSet { update() } }
 
+    override public var textColor: UIColor! { get { return color ?? typography.defaultColor } set { color = newValue }}
+    private var color: UIColor? { didSet { update() }}
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        color = nil
         setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        color = nil
         setup()
     }
 
-    private func setup() {
-        _ = NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: BrandingManager.didChange), object: nil, queue: nil) { [weak self] (_) in
-            self?.update()
-        }
+    public func apply(typography: BrandingManager.Typography) {
+        self.typography = typography
     }
 
-    public func apply(typography: BrandingManager.Typography, color: UIColor? = nil) {
-        self.typography = typography
-        textColor = color ?? typography.defaultColor
+    public func configureDesign() {
+        update()
     }
 
     private func update() {
@@ -51,7 +55,7 @@ public class Label: UILabel {
 
         var attr = [NSAttributedString.Key: Any]()
         attr[.font] = typography.font
-        attr[.foregroundColor] = textColor
+        attr[.foregroundColor] = color ?? typography.defaultColor
         attr[.paragraphStyle] = paragraphStyle
         attr[.underlineStyle] = underlineStyle.rawValue
         attr[.kern] = letterSpace

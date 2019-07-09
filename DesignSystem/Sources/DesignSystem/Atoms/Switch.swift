@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-public final class Switch: UISwitch {
+public final class Switch: UISwitch, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
+
+
 
     public var dark: Bool = false { didSet { updateForDark() }}
 
@@ -30,5 +33,9 @@ public final class Switch: UISwitch {
 
     private func updateForDark() {
         thumbTintColor = dark ? .text() : nil
+    }
+
+    public func configureDesign() {
+        updateForDark()
     }
 }

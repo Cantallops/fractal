@@ -9,21 +9,26 @@
 import Foundation
 import UIKit
 
-public class SegmentedControl: UISegmentedControl {
+public class SegmentedControl: UISegmentedControl, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
+
+
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
+        setup()
     }
 
     override public init(items: [Any]?) {
         super.init(items: items)
+        setup()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-
-    private func setup() {
+    public func configureDesign() {
         tintColor = .brand()
         backgroundColor = .clear
     }

@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-final public class TextView: UITextView {
+final public class TextView: UITextView, ThemeableViewProtocol {
+    public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
 
-    public static let placeholderColor: UIColor = .text(.placeholder)
-    public static let defaultTypography: BrandingManager.Typography = .medium
+    public static var placeholderColor: UIColor { return .text(.placeholder) }
+    public static var defaultTypography: BrandingManager.Typography { return .medium }
 
     private var usingPlaceholder: Bool = false
     private var heldTextColor: UIColor?
@@ -34,7 +35,7 @@ final public class TextView: UITextView {
         setup()
     }
 
-    private func setup() {
+    public func configureDesign() {
         font = TextView.defaultTypography.font
         textColor = .text()
         heldTextColor = textColor

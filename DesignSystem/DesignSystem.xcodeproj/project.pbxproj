@@ -44,6 +44,8 @@
 		92BA39012179829900266383 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BA38F72179829800266383 /* DesignSystem.framework */; };
 		92BA39062179829900266383 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA39052179829900266383 /* DesignSystemTests.swift */; };
 		92EAA29922A01F5F000EB39F /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAA29822A01F5F000EB39F /* CGFloat+Extensions.swift */; };
+		CADFF12122D4838D00C50EB4 /* ThemeableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF11F22D4838D00C50EB4 /* ThemeableViewProtocol.swift */; };
+		CADFF12222D4838D00C50EB4 /* ThemeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF12022D4838D00C50EB4 /* ThemeableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		92BA39052179829900266383 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
 		92BA39072179829900266383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92EAA29822A01F5F000EB39F /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		CADFF11F22D4838D00C50EB4 /* ThemeableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableViewProtocol.swift; sourceTree = "<group>"; };
+		CADFF12022D4838D00C50EB4 /* ThemeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				9228C55B229CB21600B8972B /* Switch.swift */,
 				9228C558229CB21600B8972B /* TextField.swift */,
 				9228C55D229CB21600B8972B /* TextView.swift */,
+				CADFF12022D4838D00C50EB4 /* ThemeableView.swift */,
+				CADFF11F22D4838D00C50EB4 /* ThemeableViewProtocol.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -375,9 +381,11 @@
 				9209633C2271518E00FC8E6F /* NSObject+Extensions.swift in Sources */,
 				920963372271518E00FC8E6F /* Helpers.swift in Sources */,
 				922F555522BA39C1005ABF39 /* CardView.swift in Sources */,
+				CADFF12122D4838D00C50EB4 /* ThemeableViewProtocol.swift in Sources */,
 				922F555722BA39C1005ABF39 /* DrawerHandleView.swift in Sources */,
 				9228C598229CC31200B8972B /* Section+InputChain.swift in Sources */,
 				920963392271518E00FC8E6F /* UIColor+Extensions.swift in Sources */,
+				CADFF12222D4838D00C50EB4 /* ThemeableView.swift in Sources */,
 				922F555622BA39C1005ABF39 /* CardViewController.swift in Sources */,
 				9209635D2271518E00FC8E6F /* SectionCollectionViewCell.swift in Sources */,
 				9228C59B229CC41900B8972B /* SectionViewController.swift in Sources */,
