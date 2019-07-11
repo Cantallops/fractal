@@ -12,6 +12,7 @@ import UIKit
 final public class TextField: UITextField, ThemeableViewProtocol {
     public var configureDesignClosure: ((UIView) -> Void)? { didSet { updateDesign() } }
 
+    public override var inputView: UIView? { didSet { updateDesign() } }
     static public var placeholderColor: UIColor { return .text(.placeholder) }
     override public var placeholder: String? { didSet { setPlaceholder() }}
 
@@ -40,7 +41,7 @@ final public class TextField: UITextField, ThemeableViewProtocol {
         textColor = .text()
         tintColor = .brand()
         backgroundColor = .clear
-        keyboardAppearance = BrandingManager.brand.keyboardAppearance
+        keyboardAppearance = inputView == nil ? BrandingManager.brand.keyboardAppearance : .default
         setPlaceholder()
     }
 

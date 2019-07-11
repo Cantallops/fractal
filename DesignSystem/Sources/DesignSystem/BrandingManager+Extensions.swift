@@ -35,4 +35,5 @@ public extension BrandingManager.Color.Key {
     static let sliderPositiveTint = BrandingManager.Color.Key("sliderPositiveTint")
     static let sliderNegativeTint = BrandingManager.Color.Key("sliderNegativeTint")
     static let warning = BrandingManager.Color.Key("warning")
+    static let secondary = BrandingManager.Color.Key("secondary")
 }
