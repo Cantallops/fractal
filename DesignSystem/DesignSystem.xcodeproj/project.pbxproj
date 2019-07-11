@@ -47,6 +47,7 @@
 		CADFF12122D4838D00C50EB4 /* ThemeableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF11F22D4838D00C50EB4 /* ThemeableViewProtocol.swift */; };
 		CADFF12222D4838D00C50EB4 /* ThemeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF12022D4838D00C50EB4 /* ThemeableView.swift */; };
 		CADFF13722D7098800C50EB4 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF13622D7098800C50EB4 /* Picker.swift */; };
+		CADFF13922D7373E00C50EB4 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFF13822D7373E00C50EB4 /* DatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		CADFF11F22D4838D00C50EB4 /* ThemeableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableViewProtocol.swift; sourceTree = "<group>"; };
 		CADFF12022D4838D00C50EB4 /* ThemeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeableView.swift; sourceTree = "<group>"; };
 		CADFF13622D7098800C50EB4 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		CADFF13822D7373E00C50EB4 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				9228C55A229CB21600B8972B /* Button.swift */,
+				CADFF13822D7373E00C50EB4 /* DatePicker.swift */,
 				9228C556229CB21600B8972B /* GradientView.swift */,
 				9228C559229CB21600B8972B /* ImageView.swift */,
 				9228C55E229CB21600B8972B /* Label.swift */,
@@ -381,6 +384,7 @@
 				9228C567229CB21600B8972B /* Label.swift in Sources */,
 				9228C55F229CB21600B8972B /* GradientView.swift in Sources */,
 				920963582271518E00FC8E6F /* Section.swift in Sources */,
+				CADFF13922D7373E00C50EB4 /* DatePicker.swift in Sources */,
 				9209633C2271518E00FC8E6F /* NSObject+Extensions.swift in Sources */,
 				920963372271518E00FC8E6F /* Helpers.swift in Sources */,
 				922F555522BA39C1005ABF39 /* CardView.swift in Sources */,

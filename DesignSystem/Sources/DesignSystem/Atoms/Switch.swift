@@ -18,12 +18,7 @@ public final class Switch: UISwitch, ThemeableViewProtocol {
 
     public init() {
         super.init(frame: .zero)
-        layer.cornerRadius = bounds.size.height/2
-
-        // for dark mode brand
-        // thumbTintColor = .background(.cell)
-        // backgroundColor = .atom(.switchTint)
-        // tintColor = .atom(.switchTint)
+        setup()
     }
 
     @available (*, unavailable)
@@ -37,5 +32,6 @@ public final class Switch: UISwitch, ThemeableViewProtocol {
 
     public func configureDesign() {
         updateForDark()
+        layer.cornerRadius = bounds.size.height/2
     }
 }
